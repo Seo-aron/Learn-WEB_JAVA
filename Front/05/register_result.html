@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <!-- <style>
+            table{
+                border-collapse: collapse;
+            }
+            th,td{
+                border: 1px solid;
+                text-align: left;
+            }
+        </style> -->
+    </head>
+    <body>
+        <!-- 10행 2열 -->
+        <div id="container">
+            <form action="a.jsp">
+                <table style="text-align: left;" border="1" align="center">
+                    <tr>
+                        <th style="text-align: center;" colspan="2">회원가입</th>
+                    </tr>
+                    <tr>
+                        <th>*이름</th>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>*ID</th>
+                        <td><input type="text"> <input type="button" value="유효성확인"></td>
+                    </tr>
+                    <tr>
+                        <th>*비밀번호</th>
+                        <td><input type="password"></td>
+                    </tr>
+                    <tr>
+                        <th>*비밀번호 확인</th>
+                        <td><input type="password"></td>
+                    </tr>
+                    <tr>
+                        <th>*직업</th>
+                        <td><select name="job" id="s_j">
+                            <option selected>직업명</option>
+                            <option value="ect">기타</option>
+                            <option value="sel">회사원</option>
+                            <option value="stu">학생</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <th>*성별</th>
+                        <td><input type="radio" name="sex" value="male">남자
+                            <input type="radio" name="sex" value="female">여자
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>*취미</th>
+                        <td><input type="checkbox" name="hobby" value="h1">독서
+                            <input type="checkbox" name="hobby" value="h2">등산
+                            <input type="checkbox" name="hobby" value="h3">낚시
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>*가입동기</th>
+                        <td><textarea name="" id="" cols="80" rows="25"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;" colspan="2">
+                            <input type="submit" value="회원가입"> 
+                            <input type="reset" value="다시작성">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

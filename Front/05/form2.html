@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        <!--
+        input태그 : 다양한 입력할 수 있는 디자인을 보여주며, 사용자가 입력한 정보를 받을 때 사용
+            기본 문법 : <input 속성="값">
+            
+        input태그에 다양한 입력 디자인 유형을 설정하는 type속성
+            기본 문법 : <input type="다양한 종류의 값">
+
+        type="text" 와 type="password"
+            text : 주로 아이디, 주소 같은 한 줄짜리 텍스트를 입력받을 때 사용
+            password : 비밀번호 입력받을 시 사용, 차이점 => 불릿 혹은 별모양 등으로 암호화되어 표시됨
+        
+        input태그에 속성값이 text인 "텍스트 필드" 와 password인 "비밀번호 필드"에서 사용되는 주요 속성들
+            size : 텍스트 필드와 비밀번호 필드가 화면에 입력받은 글자의 갯수를 속성 값만큼 화면에 노출됨. (텍스트박스 크기 지정)
+            value : 텍스트 필드 요소가 처음 화면에 표시될 때 벨류값이 적혀져있는 상태로 보임. (submit시 입력한 값으로 value값이 바뀜)
+                    value값이 없다면 비어있는 텍스트 필드 (비밀번호 필드에서는 사용X)
+            maxlength : 텍스트필드와 비밀번호 필드에 입력할 수 있는 최대 문자수를 지정하는 속성
+        -->
+        <form action="">
+            <fieldset>
+                <label>아이디 : <input type="text" id="user_id" size="10" value="admin" maxlength="10"></label>
+                <label>비밀번호 : <input type="password" id="user_pw" size="10"></label>
+            </fieldset>
+        </form>
+        <!-- 
+        type속성 값중 "checkbox"와 "radio"
+            checkbox : 여러 항목중에서 1개이상의 항목을 선택할 수 있음
+            radio : 여러 항목중에서 1개의 항목만 선택할 수 있음
+
+        체크박스와 라디오버튼 input태그에서 사용하는 주요 속성들
+            value : 선택한 체크박스나 라디오버튼의 값을 서버페이지로 알려줄 때 넘겨줄 값을 지정하는 속성 (숫자나 영문, 필수 속성)
+            checked : 체크박스나 라디오버튼의 항목은 처음에 아무것도 체크되어있지 않은 상태로 표시되는데,
+                      여러 항목 중에서 기본으로 선택해 놓은 항목에 사용
+        -->
+        <form action="a.jsp">
+            <fieldset>
+                <legend>상품 선택</legend>
+                <p><b>주문할 상품을 선택해 주세요</b></p>
+                <ul>
+                    <li><label><input type="checkbox" name="s3" value="s_3">선물용 3kg</label><input type="number">개</li>
+                    <li><label><input type="checkbox" name="s5" value="s_5">선물용 5kg</label><input type="number">개</li>
+                    <li><label><input type="checkbox" name="g3" value="g_3">가정용 3kg</label><input type="number">개</li>
+                    <li><label><input type="checkbox" name="g5" value="g_5">가정용 5kg</label><input type="number">개</li>
+                </ul>
+
+                <p><b>포장 선택</b></p>
+                <ul>
+                    <li><label><input type="radio" name="gift" value="yes">선물 포장</label></li>
+                    <li><label><input type="radio" name="gift" value="no">선물 포장 안함</label></li>
+                </ul>
+            </fieldset>
+
+            <button>제출</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- 
+        - form태그는 몇가지 속성을 사용해서 입력받은 자료를 어떤 전송방식으로
+          서버페이지로 넘길지 처리할 것인지를 지정하는 태그이다.
+        - 기본문법
+        <form 속성="값">
+            여러 폼 요소들
+        </form>
+        - form태그 속성 종류
+            1. method : 사용자가 입력한 내용을 서버 쪽 프로그램(서버페이지로) 
+                        어떻게 넘겨 줄것인지 지정하는 속성으로 값은 get또는 post중 선택해서 사용
+                1-1. get : 데이터를 256~4296 byte 크기까지만 서버페이지 쪽으로 넘길 수 있음. (method 속성의 기본값, 테스트용도로 사용)
+                           웹브라우저 주소창에 사용자가 입력한 내용이 그대로 드러나는 단점이 있음 (ex. id, pw값 주소창에 보임)
+                1-2. post: 데이터 크기의 제한을 받지않음. 사용자가 입력한 내용도 드러나지 않는다.
+            2. name : 자바스크립트 언어로 form태그 내부에 작성된 input요소들을 제어할 form태그에 이름을 부여 (변수명 느낌인 거 같음)
+            3. action : form태그로 감싼 내용을 서버페이지로 전달할 때 어디로 보낼지 적는 주소 경로를 적는 곳.
+            4. target : action속성에서 지정한 서버페이지경로를 현재 웹브라우저 창이 아닌 새 창을 띄워서 요청하는 속성
+            5. autocomplete : form태그로 감싸져 있는 자식태그에 데이터를 입력할 때 한 번이라도 입력한 내용을 자동으로 표시
+                              기본값은 "on", 즉 자동완성 기능이 기본으로 켜져있음 (ex. 아이디 입력시 dk만 쳐도 dkfhs4337나오는 기능)
+        ============================================================================================================================================
+        - filedset태그 : 하나의 form태그안에서 여러 구역을 나누어서 표시할 때 사용
+                         예를 들어 쇼핑몰 사이트에서 주문 시 개인정보와 배송정보를 나누어서 표시할 때 사용
+            기본 문법
+                - <filedset 속성="값"></filedset>
+        - lengend태그 : filedset태그로 묶은 그룹에 제목을 붙이는 태그
+            기본 문법
+                - filedset태그 작성하고 그 안에 <lengend>그룹 이름</lengend>
+        - label태그 : 한 줄 텍스트를 입력 받을 수 있게 input태그 앞에 텍스트를 표시할 영역을 지정하는 태그
+            기본 문법
+                - <label>레이블 명<input></label>
+                - <label for="값">레이블 명</label>
+                  <input id="값"> (label과 input값을 똑같이 적어줘야 함)
+        -->
+        <h1>레드향 주문하기</h1>
+        <form action="a.jsp" method="get" autocomplete="on">
+            <fieldset>
+                <legend>상품 선택</legend>
+                <label>아이디(6자 이상)<input></label>
+            </fieldset>
+            <fieldset>
+                <legend>배송 정보</legend>
+                <label for="user-id">아이디(6자 이상)</label>
+                <input id="user-id">
+            </fieldset>
+
+            <input type="button" value="일반" onclick="alert('경고');">
+            <input type="submit" value="전송">
+            <input type="image" src="이미지경로" value="전송">
+            <input type="reset" value="리셋">
+            <!-- button태그의 기본값이 sumbit -->
+            <button type="button">버튼</button>
+        </form>
+    </body>
+</html>
