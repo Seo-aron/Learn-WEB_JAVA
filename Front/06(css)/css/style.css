@@ -1,0 +1,5 @@
+h1{
+    padding: 10px; /* left, right, top, bottom 공통으로 10px만큼 안 쪽 여백을 만듬 */
+    background-color: black;
+    color: white;
+}
