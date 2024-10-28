@@ -1,0 +1,26 @@
+*{
+    /* 모든 요소 테두리 영역을 포함해 계산 */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+#contents{
+    background: url("../images/bg.jpg") no-repeat;
+    /* 배경을 div박스 크기에 딱 맞게 맞춤 */
+    background-size: cover;
+    width: 800px;
+    height: 500px;
+    margin: 0 auto;
+    /* 자식 요소의 절대 위치를 위한 상대 위치 설정 */
+    position: relative;
+}
+h1{
+    color: #fff;
+    font-size: 120px;
+    /* 오른쪽 수직아래 색 */
+    text-shadow: 2px 3px #000;
+    /* relative위치를 기준으로 위치를 지정 */
+    position: absolute;
+    right: 100px;
+    bottom: 100px;
+}
