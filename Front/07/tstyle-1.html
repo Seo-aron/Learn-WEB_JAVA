@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <!--
+        글꼴 관련 스타일
+            1) 글꼴을 지정하는 font-family
+                p태그, hn태그 사이 텍스트에 사용
+                문법 - font-family : 글꼴이름1, 글꼴이름2, ...
+                웹 문서에 글꼴을 하나만 지정하거나 여러개 지정가능
+                ex) body{ font-family : 맑은 고딕, 궁서 } -> 맑은 고딕이란 폰트가 없다면 궁서를 사용
+            
+            2) 글자 크기를 지정하는 font-size
+                단위는 px, pt, % 등으로 지정
+                문법 - font-size : "절대크기 또는 상대크기 또는 크기 또는 백분율"
+                절대크기 : 웹브라우저에서 지정한 크기
+                상대크기 : 부모요소의 글자를 기준
+                크기 : 웹브라우저와 상관없이 직접 지정
+                백분율 : 부모요소의 글자를 기준으로 %로 지정
+                
+                참고) 키워드를 사용해서 글자크기 지정 (예약어)
+                xx-small < x-small < small < medium < large < x-large < xx-large
+
+                참고) 단위를 사용해서 글자크기 지정
+                상대크기 em, rem도 있음
+                1em = 16px = 12pt
+                
+                CSS에서 사용하는 단위
+                em - 부모요소 글꼴의 대문자 M의 너비를 기준
+                rem - 시작 부분에서 지정한 크기를 기준
+                ex - 해당 글꼴의 x의 높이를 기준
+                px - 모니터 화면의 1픽셀을 기준
+                pt - 일반 문서에서 자주 사용
+
+                참고) 백분율(%)도 사용 가능 - 부모요소 글자 크기를 기준
+                      단 백분율로 계산하려면 부모요소의 글자 크기가 단위로 표현되어야함
+        
+            3) 이탤릭체로 글자를 표시하는 font-style
+                문법 - font-style : normal 또는 italic 또는 oblique
+                normal - 기본값, italic = oblique
+            
+            4) 글자 굵기 지정하는 font-weight
+                예약어(normal, bold, bolder)나 숫자(100~900)를 이용해 지정가능 (400 : 평균 / 700 : 굵게)
+                문법 - font-weight : normal 또는 bold 또는 bolder 또는 lighter 또는 100~900의 숫자값
+        -->
+        <style>
+            body{
+                font-size: 20px;
+            }
+            h1{
+                font-family: 궁서;
+                font-size: 3em;
+            }
+            .accent{
+                font-size: 150%;
+                font-weight: 700;
+            }
+            .italic{
+                font-style: italic;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>레드향</h1>
+            <p>껍질에 붉은 빛이 돌아 <span class="accent">레드향</span>이라 불림</p>
+            <p>레드향은 한라봉과 귤을 교배한 것으로 일반 귤보다 2~3배 크고 과육이 어쩌고저쩌고</p>
+            <p class="italic">비타민 c와 비타민p가 풍부해 혈액순환, 감기예방에 좋다</p>
+        </div>
+    </body>
+</html>
