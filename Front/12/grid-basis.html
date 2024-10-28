@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 그리드 레이아웃이란  */
+        /* 2차원 방식으로 레이아웃 설계 ( 플렉스 박스는 1차원 방식 ) */
+        .grid-container{
+            display: grid;
+
+            /* grid-template-columns: 100px 100px;
+            grid-template-rows: 100px 100px; */
+            
+            /* grid-template-columns: repeat(2, 100px);
+            grid-template-rows: repeat(2, 50px); */
+
+            /* minmax()함수로 행, 열의 크기 범위를 지정 */
+            /* grid-template-columns: minmax(10px, 100px) 100px;
+            grid-template-rows: minmax(10px, 50px) 50px; */
+
+            grid-template-columns: repeat(2, minmax(100px, 200px));
+            grid-template-rows: repeat(2, minmax());
+
+            row-gap: 10px;
+            column-gap: 20px;
+
+            /* align-items: stretch; */
+            
+            /* justify-items: center; */
+
+            place-items: center end;
+        }
+        .grid-item{
+            background-color: #ff5252;
+            color: white;
+        }
+        .grid-item:nth-child(2n){
+            background-color: #bf5e5e;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item">item-1 </div>
+        <div class="grid-item">item-2 </div>
+        <div class="grid-item">item-3 </div>
+        <div class="grid-item">item-4 </div>
+    </div>
+</body>
+</html>

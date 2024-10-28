@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 주제 : 플렉스 박스 레이아웃을 이용해 1차원 레이아웃 설계 */
+        .flex-container{
+            width: 300px;
+            height: 200px;
+            background-color: #c4c4c4;
+            border: 1px solid;
+            
+            /* flex는 적용된 모든 항목요소의 다음 요소들이 항상 줄바꿈이 됨 (블럭라인) => 세로방향에서 가로방향으로 배치됨*/
+            /* inline-flex는 다음 요소가 주변에 배치되도록 함 */
+            display: flex;
+
+            /* flex-direction 속성 : 플렉스 박스의 주축 방향을 설정 */
+            /* flex-direction: row; */
+
+            /* flex-wrap 속성 : 플렉스 항목이 플렉스 컨테이너 영역을 벗어날 때 어떻게 처리할지 결정 */
+            /* 
+            nowrap          : 영역을 벗어나도 무시
+            wrap            : 영역을 벗어나면 줄 바꿈
+            wrap-reverse    : 영역을 벗어나면 wrap의 역뱡향으로 줄 바꿈
+            */
+            /* flex-wrap: wrap; */
+
+            /* flex-flow 속성 : direction + wrap 속성을 합친 속성임 */
+            /* flex-flow: row wrap */
+
+            /* 
+            플렉스 박스 레이아웃 정렬속성 
+        
+            1. justify-content 속성
+                플렉스 항목을 주축방향으로 정렬할 때 사용
+                
+                속성값
+                    flex-start
+                    flex-end
+                    center
+                    space-between
+                    space-around
+                    space-evenly
+            */
+            /* justify-content: flex-start; */
+
+            /*
+            2. align-ltems속성
+                플랙스 항목을 교차축 방향으로 정렬할 때 사용
+
+                속성값
+                    stretch     플렉스 항목의 너비나 높이가 늘어나게 함
+                    flex-start
+                    flex-end
+                    center
+                    baseline    플렉스 항목의 baseline을 기준으로 정렬
+            */
+            /* align-items: center; */
+
+            /* 
+            align-content 속성도 교차측 방향으로 정렬하지만 플렉스 항목이 2줄 이상일 때 사용
+            */
+            /* align-content: center; */
+        }
+        .flex-item{
+            background-color: #ff5252;
+            color: white;
+        }
+        .flex-item:nth-child(1){
+            align-self: flex-start;
+        }
+        .flex-item:nth-child(2){
+            align-self: flex-end;
+        }
+        .flex-item:nth-child(3){
+            align-self: center;
+        }
+        .flex-item:nth-child(4){
+            align-self: baseline;
+        }
+    </style>
+</head>
+<body>
+    <!-- 플렉스 컨테이너 -->
+    <!-- display라는 값으로 flex, inline-flex 값이 설정된 요소 -->
+    <div class="flex-container">
+        <div class="flex-item">item-1</div>
+        <div class="flex-item">item-2</div>
+        <div class="flex-item">item-3</div>
+        <div class="flex-item">item-4</div>
+        <!-- <div class="flex-item">item-5</div>
+        <div class="flex-item">item-6</div>
+        <div class="flex-item">item-7</div>
+        <div class="flex-item">item-8</div>
+        <div class="flex-item">item-9</div>
+        <div class="flex-item">item-10</div>
+        <div class="flex-item">item-11</div> -->
+    </div>
+</body>
+</html>
