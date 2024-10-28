@@ -1,0 +1,46 @@
+#container {
+  width:1000px;
+  margin:20px auto;
+}
+h1 {
+  text-align:center;
+}
+.prod-list {
+  list-style:none;
+  padding:0;
+}
+.prod-list li {
+  float: left;
+  padding: 0;
+  margin: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.prod-list img {
+  margin:0;
+  padding:0;
+  float:left;
+  /* 다른요소와 위, 아래 겹치는 것을 제어함 */
+  z-index:5;
+}
+.prod-list .caption{
+  /* 부모의 relative, absolute, fixed, sticky를 기준으로 배치 */
+  position: absolute;
+  /* 위에서 부터 200px 아래에 배치 */
+  top: 200px;
+  width: 300px;
+  height: 200px;
+  padding-top: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: all 0.6s ease-in-out;
+  z-index: 10;
+}
+.prod-list li:hover .caption{
+  opacity: 1;
+  transform: translateY(-200px);
+}
+.prod-list .caption h2, .prod-list .caption p{
+  color: #fff;
+  text-align: center;
+}
