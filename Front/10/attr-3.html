@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+    CSS고급 선택자 종류중 [속성 ~= 값]
+        - 여러 속성값중 해당 속성값이 포함되어 있는 요소를 선택
+        - 속성이 하나면서 값이 여러개일 때 특정 속성값을 찾는데 유리
+        - ex) [class ~= button] { 스타일 정의 }
+            - class속성 중 button이라는 단어가 포함되어 있는 요소를 선택
+    -->
+    <style>
+        ul{
+            list-style: none;
+        }
+        li{
+            display: inline-block;
+            margin-right: 10px;
+        }
+        li a{
+            padding: 5px 20px;
+            font-size: 14px;
+            color: blue;
+            text-decoration: none;
+        }
+        [class ~= flat]{
+            background: #eee;
+            border: 1px solid #222;
+        }
+        [class ~= button]{
+            border: 1px solid red;
+            border-radius: 5px;
+            box-shadow: 4px 4px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#" class="flat">메뉴 1</a></li>
+        <li><a href="#" class="flat">메뉴 2</a></li>
+        <li><a href="#" class="button">메뉴 3</a></li>
+        <li><a href="#" class="flat button">메뉴 4</a></li>
+    </ul>
+</body>
+</html>

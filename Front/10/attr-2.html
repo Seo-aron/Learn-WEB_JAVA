@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+    css고급 선택자 중에서 특저 속성에 대한 값을 이용해서 선택 =>[속성=속성값] 선택자
+    -->
+    <style>
+        ul{
+            list-style: none;
+        }
+        li{
+            padding: 5px 30px;
+        }
+        li a{
+            font-size: 16px;
+            text-decoration: none;
+            color: black;
+        }
+        [target="_blank"]{
+            padding-right: 30px;
+            background: url("images/newwindow.png") no-repeat center right;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="https://html.spec.whatwg.org" target="_blank">HTML</a></li>
+        <li><a href="https://www.w3.org/TR/selectors">CSS Selector Level 3</a></li>
+        <li><a href="https://www.w3.org/TR/css3-mediaqueries">미디어 쿼리</a></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+    고급 선택자 중 속성선택자 => 요소선택[속성명] { 스타일 정의 }
+        - html태그 중 특정 속성이 있는 요소를 선택하는 선택자
+        - ex) a[href] {color : red;}
+            a요소 중에서 href속성이 작성된 a요소만 선택
+    -->
+    <style>
+        ul{
+            list-style: none;
+        }
+        li{
+            display: inline-block;
+            width: 120px;
+            margin: 10px;
+        }
+        a[href]{
+            background: yellow;
+            border: 1px solid #ccc;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a>메인 메뉴 : </a></li>
+        <li><a href="#">메뉴 1</a></li>
+        <li><a href="#">메뉴 2</a></li>
+        <li><a href="#">메뉴 3</a></li>
+        <li><a href="#">메뉴 4</a></li>
+    </ul>
+</body>
+</html>

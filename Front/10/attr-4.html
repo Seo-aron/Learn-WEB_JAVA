@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+    css고급 선택자 중 [속성 |= 값]
+        - 특정 속성값이 포함된 속성에 스타일 지정, 속성값은 한 단어로 일치
+        - 앞에서 배운 ~= 선택자와 차이점은
+          속성에 대한 값이 - 으로 연결한 단어가 있으면 선택해 오지 않는다
+          즉 |= 선택자는 지정한 값과 정확하게 일치하거나, 
+          지정한 값을 포함해서 - 기호로 연결되어 있으면 모두 선택
+    -->
+    <style>
+        ul{
+            list-style: none;
+        }
+        li{
+            display: inline-block;
+            margin: 10px;
+        }
+        li a{
+            padding: 5px 20px;
+            font-size: 14px;
+            color: blue;
+            text-decoration: none;
+        }
+        a[title |= "us"]{
+            background: url("images/us.png") no-repeat left center;
+        }
+        a[title |= ja]{
+            background: url("images/jp.png") no-repeat left center;
+        }
+        a[title |= chn]{
+            background: url("images/ch.png") no-repeat left center;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>외국어 서비스 : </li>
+        <li><a href="#" title="us-english">영어</a></li>
+        <li><a href="#" title="ja">일본어</a></li>
+        <li><a href="#" title="chn">중국어</a></li>
+    </ul>
+</body>
+</html>
