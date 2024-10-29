@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <button id="fetch-data">데이터 가져오기</button>
+        <div id="result"></div>
+        <script>
+            $('#fetch-data').click(function () {
+                $.get('https://jsonplaceholder.typicode.com/posts/1', function (data) {
+                    $('#result').html('<h2>' + data.title + '</h2><p>' + data.body + '</p>');
+                });
+            });
+        </script>
+    </body>
+</html>

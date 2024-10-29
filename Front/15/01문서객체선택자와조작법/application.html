@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <title>Document</title>
+        <style>
+            #student-list {
+                list-style-type: none;
+                padding: 0;
+            }
+            .student-item {
+                margin: 5px 0;
+            }
+        </style>
+        <script>
+            $(document).ready(function () {
+                let student = [];
+
+                function deleteStudent(name) {
+                    student = $.grep(student, function (st) {
+                        return st !== name; // st[홍길동, 김길동] , name = 김길동
+                    });
+                    renderList();
+                }
+
+                function addStudent(name) {
+                    student.push(name);
+                    renderList();
+                }
+
+                function renderList() {
+                    $('#student-list').empty();
+                    $.each(student, function (i, studnet) {
+                        $('#student-list').append(
+                            `<li class="student-item">${student} <button class="delete-student" data-name="${student}">삭제</button></li>`
+                        );
+                    });
+                }
+
+                $('#add-student').click(function () {
+                    const studentName = $('#student-name').val().trim();
+
+                    if (studentName && $.inArray(studentName, student) === -1) {
+                        addStudent(studentName);
+                        $('#student-name').val('').focus();
+                    } else {
+                        alert('학생이름을 입력하거나, 이미 존재하는 학생입니다.');
+                    }
+                });
+
+                $('#student-list').on('click', '.delete-student', function () {
+                    const studentName = $(this).data('name');
+
+                    deleteStudent(studentName);
+                });
+
+                renderList();
+            });
+        </script>
+    </head>
+    <body>
+        <h1>학생 관리 시스템</h1>
+        <div>
+            <input type="text" id="student-name" placeholder="학생 이름" />
+            <button id="add-student">추가</button>
+        </div>
+        <ul id="student-list"></ul>
+    </body>
+</html>
