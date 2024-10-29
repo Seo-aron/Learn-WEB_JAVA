@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            class Book2 {
+                constructor(title, pages, done) {
+                    this.title = title;
+                    this.pages = pages;
+                    this.done = done;
+                }
+
+                finish() {
+                    let str = '';
+
+                    this.done === false ? (str = '읽는 중') : (str = '완독');
+                    return str;
+                }
+            }
+            let book1 = new Book2('웹 표준의 정석', 648, false);
+            let book2 = new Book2('점프 투 파이썬', 550, true);
+
+            console.log(book1.title + ', ' + book1.pages + ', ' + book1.finish());
+            console.log(book2.title + ', ' + book2.pages + ', ' + book2.finish());
+        </script>
+    </body>
+</html>
