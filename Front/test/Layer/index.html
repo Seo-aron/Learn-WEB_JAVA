@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            /* 큰 틀 잡기 */
+            body{
+                width: 1000px;
+                margin: 0 auto;
+            }
+            #header{
+                background: #eee;
+                margin-bottom: 20px;
+                height: 100px;
+            }
+            #nav{
+                background: #eee;
+                height: 50px;
+                margin-bottom: 20px;
+            }
+            #content{
+                background: #eee;
+                margin-bottom: 20px;
+                height: 600px;
+            }
+            #footer{
+                background: #eee;
+                height: 100px;
+                clear: left;
+            }
+            .section_main{
+                width: 700px;
+                background: #ff0;
+                float: left;
+            }
+            .section{
+                height: 300px;
+                background: #f0f;
+            }
+            .article{
+                height: 300px;
+                background: green;
+            }
+            .aside{
+                width: 300px;
+                height: 600px;
+                background: #f00;
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">header</div>
+        <div id="nav">nav</div>
+        <div id="content">
+            <!-- div로 section, article을 안묶으면 블록특성상 aside가 한칸 밑에 생김 -->
+            <div class="section_main">             
+                <div class="section">section</div>
+                <div class="article">article</div>
+            </div>
+            <div class="aside">aside</div>
+        </div>
+        <div id="footer">footer</div>
+    </body>
+</html>

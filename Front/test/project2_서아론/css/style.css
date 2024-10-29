@@ -1,0 +1,225 @@
+/* 초기설정 */
+@charset "utp-8";
+*{
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul, ol{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+/* 헤더 영역 */
+header{
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+header .inner{
+  width: 1180px;
+  height: 120px;
+  margin: 0 auto;
+  position: relative;
+}
+header .inner h1{
+  position: absolute;
+  left: 0;
+  bottom: 15px;
+}
+header .inner h1 a{
+  font: bold 24px/1 "arial";
+  color: #444;
+}
+header .inner #grb{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+header .inner #grb li{
+  float: left;
+}
+header .inner #grb li a{
+  display: block;
+  font: bold 15px/1 "arial";
+  color: #555;
+  padding: 20px 40px;
+  /* 움직임 속도 */
+  transition: all 0.5s;
+}
+header .inner #grb li a:hover{
+  background: #555;
+  color: white;
+}
+header .inner .util{
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+header .inner .util li{
+  float: left;
+}
+header .inner .util li a{
+  display: block;
+  font: 12px/1 "arial";
+  color: #999;
+  padding: 0 10px;
+}
+/* 피규어 영역 */
+figure{
+  width: 100%;
+  /* body요소 높이에서 header높이(120px)를 뺀 높이 */
+  height: calc(100vh - 120px);
+  background: #000;
+  position: relative;
+  /* 넘치는 부분은 숨김 */
+  overflow: hidden;
+  padding-top: 250px;
+}
+figure video{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+figure .inner{
+  width: 1180px;
+  margin: 0 auto;
+  position: relative;
+}
+figure .inner h1{
+  color: #fff;
+  font: normal 120px/1 "arial";
+  margin-bottom: 20px;
+}
+figure .inner p{
+  font: 16px/1.4 "arial";
+  color: #888;
+  margin-bottom: 60px;
+}
+figure .inner a{
+  display: block;
+  width: 400px;
+  height: 30px;
+  border: 1px solid #bbb;
+  text-align: center;
+  font: bold 11px/30px "arial";
+  color: #fff;
+  /* 한 글자들의 사이 간격 */
+  letter-spacing: 1px;
+  transition: all 0.5s;
+}
+figure .inner a:hover{
+  background: white;
+  color: #555;
+}
+/* 섹션 영역 */
+section{
+  width: 100%;
+  padding: 200px 0;
+}
+section .inner{
+  width: 1180px;
+  margin: 0 auto;
+}
+section .inner h1{
+  font: bold 24px/1 "arial";
+  color: #555;
+  text-align: center;
+  margin-bottom: 50px;
+}
+section .inner .wrap{
+  width: 100%;
+}
+section .inner .wrap::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+section .inner .wrap article{
+  width: 280px;
+  float: left;
+  margin-right: 20px;
+}
+section .inner .wrap article:last-child{
+  margin-right: 0px;
+}
+section .inner .wrap article h2{
+  margin-bottom: 10px;
+}
+section .inner .wrap article h2 a{
+  font: bold 16px/1 "arial";
+  color: #555;
+}
+section .inner .wrap article p{
+  font: 14px/1.4 "arial";
+  color: #777;
+}
+section .inner .wrap article .pic{
+  width: 100%;
+  height: 120px;
+  background: #333;
+  margin-bottom: 15px;
+  position: relative;
+  overflow: hidden;
+}
+section .inner .wrap article .pic img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+/* 푸터 영역 */
+footer{
+  width: 100%;
+  background: #333;
+  padding: 100px 0;
+  border-top: 1px solid #888;
+}
+footer .inner{
+  width: 1180px;
+  margin: 0 auto;
+}
+footer .inner .upper{
+  width: 100%;
+  border-bottom: 1px solid #777;
+  padding-bottom: 20px;
+}
+footer .inner .upper::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+footer .inner .upper h1{
+  float: left;
+  font: bold 24px/1 "arial";
+  color: #666;
+}
+footer .inner .upper ul{
+  float: right;
+}
+footer .inner .upper ul li{
+  float: left;
+  margin-left: 20px;
+}
+footer .inner .upper ul li a{
+  font: bold 14px/1 "arial";
+  color: #666;
+}
+footer .inner .lower{
+  width: 100%;
+  padding-top: 20px;
+}
+footer .inner .lower address{
+  width: 100%;
+  font: 12px/1.3 "arial";
+  color: #777;
+  margin-bottom: 20px;
+}
+footer .inner .lower p{
+  width: 100%;
+  font: 12px/1 "arial";
+  color: #777;;
+}
