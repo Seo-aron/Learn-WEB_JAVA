@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <!-- 제이쿼리 문법 사용 1번 방법 (인터넷x 가능)-->
+        <!-- <script src="js/jquery-3.7.1.js"></script> -->
+        <!-- 제이쿼리 문법 사용 2번 방법 (인터넷o 가능)-->
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    </head>
+    <body>
+        <h1>자바스크립트</h1>
+        <h1 id="h1">자바스크립트</h1>
+
+        <h2>제이쿼리</h2>
+        <h2 id="h2">제이쿼리</h2>
+
+        <!-- 제이쿼리 문법을 사용하기 위한 선언문 작성 -->
+        <script>
+            let h1obj = document.getElementsByTagName('h1')[0];
+            console.log(h1obj);
+
+            let h1obj2 = document.getElementById('h1');
+            console.log(h1obj2);
+
+            // 제이쿼리
+            console.log($('h2')[0]);
+            console.log($('#h2')[0]);
+        </script>
+    </body>
+</html>
