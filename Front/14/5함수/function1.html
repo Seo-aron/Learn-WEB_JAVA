@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            function multiply(a, b) {
+                console.log(`a: ${a}, b: ${b}`);
+
+                return a * b;
+            }
+            // console.log(multiply(5, 10));
+            console.log(multiply(7)); // a = 7, b = undefined, 출력 : NaN (Not a Number)
+
+            const add = (x = 5, y = 5) => {
+                console.log(`x: ${x}, y: ${y}`);
+
+                return x * y;
+            };
+            add(3);
+            console.log(3 + 3 + '5' + 3 + 5);
+        </script>
+    </body>
+</html>

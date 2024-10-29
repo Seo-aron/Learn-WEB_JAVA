@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // 3. 체질량 지수(BMI)를 계산하는 공식은 몸무게를 키(m)의 제곱으로 나눈 값입니다.
+            //    사용자에게 키(cm)와 몸무게(kg)에 해당하는 값을 전달받아 체질량 지수를 계산합니다.
+            //    체질량 지수가 26점 이상이면 비만, 24~25점은 과체중,
+            //    18.5~23점은 정상, 18.5점 미만은 저체중을 반환하는 함수를 만들어 보세요.
+
+            let height = parseFloat(prompt('키를 입력하세요'));
+            let kg = parseFloat(prompt('몸무게를 입력하세요'));
+
+            function bmi(h, k) {
+                // h : 키. k : 몸무게
+                h = h / 100;
+                let v_bmi = k / (h * h);
+
+                if (v_bmi >= 26) {
+                    return console.log('비만');
+                } else if (v_bmi >= 24 && v_bmi <= 25) {
+                    return console.log('과체중');
+                } else if (v_bmi >= 18.5 && v_bmi <= 23) {
+                    return console.log('정상');
+                } else {
+                    return console.log('저체중');
+                }
+            }
+
+            bmi(height, kg);
+        </script>
+    </body>
+</html>
