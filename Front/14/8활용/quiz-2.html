@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>연습문제 2</title>
+        <link rel="stylesheet" href="css/quiz-2.css" />
+    </head>
+    <body>
+        <div id="noti-box"></div>
+        <button id="bttn">클릭!</button>
+        <script>
+            const btn = document.querySelector('#bttn');
+            btn.addEventListener('click', function () {
+                const div_box = document.querySelector('#noti-box');
+                const alam = document.createElement('div');
+                div_box.appendChild(alam);
+                alam.classList.add('noti');
+                alam.innerText = '3초동안 유지됨';
+                setTimeout(time, 3000);
+                function time() {
+                    alam.classList.remove('noti');
+                    alam.innerText = '';
+                }
+            });
+        </script>
+    </body>
+</html>

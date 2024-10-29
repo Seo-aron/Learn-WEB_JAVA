@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            #container {
+                border-bottom: 1px dashed;
+                margin-bottom: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <h1>상품 설명</h1>
+            <h2>자바스크립트의 정석</h2>
+            <p>베스트 셀러 입니다.</p>
+
+            <button id="order">주문하기</button>
+        </div>
+        <div id="orderInfo"></div>
+        <script>
+            const orderInfo = document.querySelector('#orderInfo');
+            const orderButton = document.querySelector('#order');
+            const title = document.querySelector('#container > h2');
+
+            orderButton.addEventListener('click', () => {
+                let newP = document.createElement('p');
+                let textNode = document.createTextNode(title.innerText);
+                newP.appendChild(textNode);
+                newP.style.fontSize = '0.8em';
+                newP.style.color = 'blue';
+                orderInfo.appendChild(newP);
+            });
+        </script>
+    </body>
+</html>

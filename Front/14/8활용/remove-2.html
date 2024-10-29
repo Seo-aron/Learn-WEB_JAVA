@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>노드 삭제하기</title>
+    </head>
+    <body>
+        <h1>웹 프로그래밍</h1>
+        <ul>
+            <li id="items"></li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Javascript</li>
+
+            <script>
+                const items = document.querySelectorAll('li');
+
+                for (let i of items) {
+                    i.addEventListener('click', function () {
+                        console.log(this);
+                        // this.parentNode.removeChild(this);
+                        this.remove(this);
+                    });
+                }
+
+                // for (let i of items) {
+                //     i.addEventListener('click', () => {
+                //         // this.parentNode.removeChild(this); // 오류발생
+                //     });
+                // }
+            </script>
+        </ul>
+    </body>
+</html>

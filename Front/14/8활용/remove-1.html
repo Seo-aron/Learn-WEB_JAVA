@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>노드 삭제하기</title>
+    </head>
+    <body>
+        <h1>웹 프로그래밍</h1>
+        <ul>
+            <li id="items"></li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Javascript</li>
+
+            <script>
+                const title = document.querySelector('h1');
+                title.addEventListener('click', () => {
+                    title.remove();
+                });
+            </script>
+        </ul>
+    </body>
+</html>
