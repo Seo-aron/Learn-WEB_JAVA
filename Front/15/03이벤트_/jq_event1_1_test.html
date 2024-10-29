@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Insert title here</title>
+
+        <!-- 제이쿼리 설치 -->
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            $(function () {
+                $('.btn1').click(function () {
+                    $('p:eq(1)').css('color', 'red');
+                });
+
+                $('.btn2').on({
+                    'mouseover focus': function () {
+                        $('p:eq(3)').css('color', 'blue');
+                    },
+                    'mouseout blur': function () {
+                        $('p:eq(3)').css('color', 'aqua');
+                    },
+                });
+
+                $('.btn3').on('click mouseover focus', function () {
+                    $('body').css('background', 'green');
+                    $('p:last').text('내용');
+                });
+                $('.btn3').on('mouseout blur', function () {
+                    $('body').css('background', '#fff');
+                    $('p:last').text('내용3');
+                });
+            }); // $(function(){             });<-닫는기호를 말함
+        </script>
+    </head>
+    <body>
+        <p>
+            <button class="btn1">버튼1</button>
+        </p>
+        <p>내용1</p>
+        <p>
+            <button class="btn2">버튼2</button>
+        </p>
+        <p>내용2</p>
+        <p>
+            <button class="btn3">버튼3</button>
+        </p>
+        <p>내용3</p>
+    </body>
+</html>

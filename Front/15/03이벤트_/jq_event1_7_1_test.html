@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Insert title here</title>
+
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+        <style>
+            .parent {
+                background-color: lightblue;
+                padding: 30px;
+                position: relative;
+            }
+
+            .child {
+                background-color: yellow;
+                padding: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="parent">
+            Parent
+            <div class="child">Child</div>
+        </div>
+        <script>
+            /*
+			주제 : mouseout와 mouseleave이벤트가 구조화된 요소에 어떻게 동작하는지 확인할수 있는 예제로
+			      <div class="parent">요소안에  <div class="child">요소가 만들어져 있고,
+			           두 요소에 각각의 이벤트 처리하여 보여주는 예제 입니다.	
+			*/
+
+            $('.parent').mouseout(function () {
+                console.log('Parent mouseOut');
+            });
+            $('.child').mouseout(function () {
+                console.log('Child mouseOut');
+            });
+        </script>
+    </body>
+</html>
