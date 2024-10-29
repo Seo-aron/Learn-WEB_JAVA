@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="parent" style="padding: 20px; background-color: lightblue">
+            parent
+            <div id="child" style="padding: 20px; background-color: lightcoral">child</div>
+        </div>
+
+        <script>
+            document.getElementById('parent').addEventListener(
+                'click',
+                function () {
+                    alert('Parent capturing');
+                },
+                true
+            );
+
+            document.getElementById('child').addEventListener(
+                'click',
+                function () {
+                    alert('child bubling');
+                },
+                false
+            );
+        </script>
+    </body>
+</html>

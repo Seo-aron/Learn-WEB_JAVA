@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            p {
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+            }
+            #box {
+                width: 200px;
+                height: 200px;
+                border: 1px solid;
+                border-radius: 5%;
+            }
+        </style>
+    </head>
+    <body>
+        <p>사각형 내부를 클릭 해 보세요</p>
+        <div id="box"></div>
+
+        <script>
+            const box = document.querySelector('#box');
+            box.addEventListener('click', (e) => {
+                alert(`${e.pageX}, ${e.pageY}`);
+            });
+        </script>
+    </body>
+</html>

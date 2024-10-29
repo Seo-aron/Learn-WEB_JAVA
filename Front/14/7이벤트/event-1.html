@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            let color = ['white', 'yellow', 'aqua', 'purple'];
+            let i = 0;
+            function colorBg() {
+                i++;
+                document.body.style.backgroundColor = color[i];
+                if (i == 3) {
+                    i = -1;
+                }
+            }
+
+            // 2번 버튼
+            window.onload = function () {
+                let btn2 = document.getElementById('btn2');
+                btn2.onclick = function () {
+                    colorBg();
+                };
+            };
+            // 4번 버튼
+            window.onload = function () {
+                let btn4 = document.querySelectorAll('button')[3];
+                btn4.onmouseout = function () {
+                    colorBg();
+                };
+            };
+        </script>
+    </head>
+    <body>
+        <p><button onclick="colorBg()">Button1</button></p>
+        <p><button id="btn2">Button2</button></p>
+        <p><button onmouseover="colorBg()">Button3</button></p>
+        <p><button>Button4</button></p>
+    </body>
+</html>

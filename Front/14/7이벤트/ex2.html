@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .convert {
+                background-color: black;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <p>버튼을 클릭하면 배경색, 글자색 바뀜</p>
+        <button>Click</button>
+
+        <script>
+            const btn = document.querySelector('button');
+            btn.addEventListener('click', function () {
+                document.body.classList.toggle('convert');
+            });
+
+            // document.querySelector('button').addEventListener('click', () => {
+            //     document.body.style.backgroundColor = 'green';
+            // });
+
+            // document.querySelector('button').addEventListener('click', function () {
+            //     document.body.style.backgroundColor = 'green';
+            // });
+
+            // function changeBackground() {
+            //     document.body.style.backgroundColor = 'green';
+            // }
+            // document.querySelector('button').addEventListener('click', changeBackground);
+        </script>
+    </body>
+</html>
