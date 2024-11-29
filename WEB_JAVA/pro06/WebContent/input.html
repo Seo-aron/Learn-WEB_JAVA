@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!--  http://localhost:8090/pro06/input -->
+	<form action="input" name="frmInput" method="get" >
+	
+		아이디: <input type="text" name="user_id"> <br>
+		비밀번호: <input type="password" name="user_pw"> <br>
+		
+		<!-- 
+			 여러개의 <input>을 만들때는 체크박스를 사용해서 value속성값을 설정하는 것이 좋습니다
+			 체크박스의 name속성값은 모두 subject이므로 서블릿으로 전송할때
+			 체크된 값들만  String배열에 담고 HttpServletRequest객체 메모리에 저장후 전송합니다
+		 -->
+		<input type="checkbox" name="subject" value="java"> 자바 
+		<input type="checkbox" name="subject" value="C"> 씨 
+		<input type="checkbox" name="subject" value="JSP"> 제이에스피 
+		<input type="checkbox" name="subject" value="Android"> 안드로이드 
+		
+		<br><br>
+		
+		<!-- 전송요청 버튼을 클릭하면 <form>태그의 action속성에 작성한 input매핑주소에 관한
+		     서블릿 서버페이지 요청! -->
+		<input type="submit" value="전송요청">
+		 
+		<input type="reset" value="초기화">
+	
+	
+	</form>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
