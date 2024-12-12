@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#cal").on("click", function () {
+			$.ajax({
+				url: "calc.jsp",
+				type: "get",
+				data:{v1:$("#v1").val(), 
+					  v2:$("#v2").val()},
+				dataType: "text",
+				success: function (responseData, status, jqxhr) {
+					console.log(responseData);
+					$("#result").text(responseData);
+				},
+				// success까진 필수 키
+				error: function(jqxhr, status, error) {
+					console.log(error);
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	값1<input type="text" name="v1" id="v1"><br>
+	값2<input type="text" name="v2" id="v2"><br>
+	
+	<button id="cal">계산</button>
+	<div id="result"></div>
+</body>
+</html>

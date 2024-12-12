@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var xhttp;
+	
+	function createHttpRequest() {
+		xhttp = new XMLHttpRequest();
+	}
+	
+	function mySend() {
+		createHttpRequest();
+		
+		xhttp.onreadystatechange = callFunction;
+		xhttp.open("GET", "json.json", true);
+		xhttp.send(null);
+	}
+	
+	function callFunction() {
+		if(xhttp.readyState == 4){
+			if(xhttp.status == 200){
+				// json을 받으려면 text
+				var responseData = xhttp.responseText;
+				console.log(responseData);
+				console.log(typeof responseData);
+				
+				let jsonObject = JSON.parse(responseData);
+				console.log(jsonObject.username);
+				console.log(jsonObject.age);
+				console.log(jsonObject.address);
+				
+				var name = jsonObject.username;
+				var age = jsonObject.age;
+				var address = jsonObject.address;
+				
+				document.getElementById("result").innerHTML = name + "\t" + age + "\t" + address;
+			}
+			
+		}
+	}
+</script>
+</head>
+<body>
+	XML 텍스트 파일 실습
+	<br>
+	<button onclick="mySend();">파일 수신 요청</button>
+	
+	<div id="result"></div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="container">
+		<div class="letters">
+			<div class="letter" id="target">
+				<h3><a href="#">클릭</a></h3>
+			</div>
+		</div>
+		<div id="dictionary">
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+	$("#target").click(function() {
+		$.getJSON('ex1.json', function(data) {
+			console.log(data, "");
+			var html = '';
+			
+			$.each(data, function(entryIndex, entry) {
+				html += '<div class="entry">';
+					html += '<h3 class="term">' + entry.term + '</h3>';
+					html += '<div class="part">' + entry.part + '</div>';
+					html += '<div class="definition">' + entry.definition + '</div>';
+				html += '</div>';
+			});
+			console.log(html);
+			$("#dictionary").html(html);
+		});
+		return false;
+	});
+</script>
+</body>
+</html>

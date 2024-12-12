@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var xhttp;
+	
+	function createHttpRequest() {
+		xhttp = new XMLHttpRequest();
+	}
+	
+	function mySend() {
+		createHttpRequest();
+		
+		xhttp.onreadystatechange = callFunction;
+		xhttp.open("GET", "sampleText.jsp?userid=홍길동&passwd=test", true);
+		xhttp.send(null);
+	}
+	
+	function callFunction() {
+		if(xhttp.readyState == 4){
+			if(xhttp.status == 200){
+				var responseData = xhttp.responseText;
+				
+				document.getElementById("result").innerHTML = responseData;
+			}
+			
+		}
+	}
+</script>
+</head>
+<body>
+	jsp 텍스트 파일 실습
+	<br>
+	<button onclick="mySend();">파일 수신 요청</button>
+	
+	<div id="result"></div>
+</body>
+</html>
