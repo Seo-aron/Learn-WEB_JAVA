@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- Appenders -->
+	<!-- 
+		
+log4j.xml을 이루는 태그들
+		
+<appender></appender>
+		
+로그메세지의 출력 위치를 결정(파일, 콘솔창, DB)합니다.
+log4j API문서의  XXXApender로 끝나는 클래스들의 이름을 본면 출력위치를 알수 있습니다.
+		
+		<appender></appender>태그를 이용해  콘솔로 출력할지 파일로 출력할지 DB에 출력할지 설정 하는데..
+		여러 가지 XXXApender로 끝나는 클래스들 종류
+			ConsoleAppender    -   org.apache.log4j.ConsoleAppender 클래스로 
+								   이클립스나 STS의 console창에 로그메시지를 출력위치를 결정합니다.
+								   
+			FileAppender	-      org.apache.log4j.FileAppender 클래스로 
+								   파일에 로그메시지를 출력(기록)하기 위해 파일을 출력위치로 결정합니다.
+								   
+			RollingFileAppender  - 	org.apache.log4j.rolling.RollingFileAppender 클래스로
+									파일 크기가 일정 기준을 넘으면 기존파일을 백업파일로 바꾸고 처음부터 다시 기록
+		
+			DailyRollingFileAppender  - 	org.apache.log4j.DailyRollingFileAppender 클래스로
+										설정한 기간 단위로 새 파일을 만들어서 로그메세지를 기록 									   
+
+
+
+<layout></layout>
+
+	어떤 형식으로 출력할지 출력 레이아웃을 결정하는 태그 
+
+	<layout>태그에 class속성에 설정한 PatternLayout클래스의 출력형식을 지정하는 속성들
+		
+		%p	 debug,info,error,fatal등 로그레벨 이름 출력
+		%m   로그 메세지 출력
+		%d   로깅 이벤트 발생 시각 출력 
+		%F	 로깅이 발생한 프로그램 파일 이름 출력 
+		%l	 로깅이 발생한 caller의 정보 출력
+		%L	 로깅이 발생한 caller의 라인수 출력 
+		%M	 로깅이 발생한 mothod이름 출력 
+		%c	 로깅 메세지 앞에 전체 패키지 이름이나 전체 파일 이름 출력 
+		.......
+		
+<logger></logger>
+	로깅 메세지를 appender태그의 클래스에 전달하는 역할을 합니다.
+	개발자가 로그 레벨을 이용해 로그출력여부를 조정할수 있습니다.
+	logger태그는 로그 레벨을 가지고 있으며, 로그의 출력여부는 로그문의 레벨과 로거의 레벨을 가지고 결정합니다.		
+		
+		
+	log4j의 레벨은 6단계로 나누어집니다. 종류 표 
+	
+		FATAL	  시스템차원에서 심각한문제가 발생해 애플리케이션 작동이 불가능 한경우에 해당하는 레벨종류 입니다.
+				  일반적으로 애플리케이션에서 사용할 일이 없습니다.
+				  
+		ERROR	  실행 중 문제가 발생한 상태를 나타내는 레벨 종류 입니다.
+		
+		WARN      향후 시스템오류의 원인이 될수 있는 경고 메세지를 나타내를 레벨 종류 입니다.
+		
+		INFO	  로그인, 상태 변경과 같은 실제 애플리케이션 운영과 관련된 정보 메세지를 나타낼 레벨 종류 입니다. 
+		
+		DEBUG	  개발시 디버깅 용도로 사용한 메세지를 나태낼 레벨 종류 입니다.
+		
+		TRACE	  DEBUG레벨 보다 상세한 로깅 정보를 출력하기 위해 도입된 레벨 입니다. 
+				  			  
+	
+	참고. 낮은 레벨로 코드의 메세지를 설정했다면 그 레벨 보다 높게 설정한 메세지들은 모두 출력됩니다.
+		 예를 들어  log4j.xml에서 DEBUG로 애플리케이션 레벨을 설정했다면 
+		 실제 코드에서 그이상의 레벨로 설정된 메세지들은 모두 출력됩니다. 
+		 
+		 더 자세한 내용흔 log4j홈페이지 참고   http://logging.apache.org/log4j/1.2/manual.html	
+		
+		
+	 -->
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+

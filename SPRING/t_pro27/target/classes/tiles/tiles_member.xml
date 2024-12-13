@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+	<!--        공통레이아웃을 가져자 사용할 이름 설정 ,   전체 화면의 공통 레이아웃을  layout.jsp로 지정합니다. -->
+	<definition name="baseLayout" template="/WEB-INF/views/common/layout.jsp">
+	
+		<put-attribute name="title" value=""/>
+	
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp"/> <!-- 레이아웃에서 상단(헤더)를 구성하는 jsp의 위치를 지정 -->
+		
+		<put-attribute name="side" value="/WEB-INF/views/common/side.jsp"/> <!-- 레이아웃에서 사이드 메뉴를 구성하는 jsp의 위치를 지정 -->
+		
+		<put-attribute name="body" value=""/>
+	
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp"/> <!-- 레이아웃에서 하단을 구성하는 jsp의 위치를 지정  -->
+	
+	</definition>
+	
+	<!-- 메인화면의 뷰이름 지정,   기본적인 레이아웃은 name속성이 baseLayout인 <definition>태그의 template속성에 설정한 layout.jsp를 상속받아 사용할것을 설정 -->
+	<definition name="main"  extends="baseLayout">
+		
+		<put-attribute name="title"  value="메인페이지" /> <!--  레이아웃의 창 제목에 표시할 구문을 지정합니다.   -->
+		
+		<put-attribute name="body" value="/WEB-INF/views/main.jsp"/> <!-- 메인화면의 중앙 영역에 표시할 jsp 위치를 지정 -->
+	
+	</definition>
+	
+	<definition name="/listMembers" extends="baseLayout">
+      <put-attribute name="title" value="회원목록창" />
+      <put-attribute name="body" value="/WEB-INF/views/member/listMembers.jsp" />
+	</definition>
+   
+
+    
+   <definition name="/loginForm" extends="baseLayout">
+      <put-attribute name="title" value="로그인창" />
+      <put-attribute name="body" value="/WEB-INF/views/member/loginForm.jsp" />
+   </definition>
+      
+ 
+   <definition name="/memberForm" extends="baseLayout">
+      <put-attribute name="title" value="회원등록창" />
+      <put-attribute name="body" value="/WEB-INF/views/member/memberForm.jsp" />
+   </definition>
+
+   <definition name="/memberDetail" extends="baseLayout">
+      <put-attribute name="title" value="회원상세(수정)창" />
+      <put-attribute name="body" value="/WEB-INF/views/member/memberDetail.jsp" />
+   </definition> 
+</tiles-definitions>
+
+
+
+
+
+
+
+
