@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="mapper.member">
+	<!-- type값 = <typeAlias type="com.spring.ex01.MemberVO" alias="memberVO"/>에 alias값으로 써야댐 -->
+	<!-- id값 = 밑에 select의 resultMap값으로 써야댐 -->
+	<!-- 
+	<resultMap type="memberVO" id="memResult">
+	-->
+		<!-- VO에 변수명 / DB에 속성명 -->
+	<!--
+		<result property="id" column="ID"/>
+		<result property="pwd" column="PW"/>
+		<result property="name" column="NAME"/>
+		<result property="email" column="EMAIL"/>
+		<result property="joinDate" column="JOINDATE"/>
+	</resultMap>
+	-->
+	
+	<!-- HashMap 키:값 형태로 저장 -->
+	<resultMap type="java.util.HashMap" id="memResult">
+		<result property="id" column="ID"/>
+		<result property="pwd" column="PW"/>
+		<result property="name" column="NAME"/>
+		<result property="email" column="EMAIL"/>
+		<result property="joinDate" column="JOINDATE"/>
+	</resultMap>
+	 
+	<select id="selectAllMemberList" resultMap="memResult">
+		<!-- SQL문 끝에 ;붙이면 에러뜸 -->
+		select * from t_member order by joinDate desc
+	</select>
+	
+	<select id="selectName" resultType="String">
+		<!-- SQL문에 " " 쓰면 에러뜸 ' '로 사용 -->
+		select name from t_member where id = 'hong'
+	</select>
+	
+	<select id="selectPw" resultType="int">
+		select pw from t_member where id = 'hong'
+	</select>
+	
+	<!-- resultMap대신에 resultType="memberVO"로 써도 똑같음 -->
+	<select id="selectMemberById" parameterType="String" resultMap="memResult">
+		select * from t_member where id = #{id}
+	</select>
+	<!-- #{ MemberVO에서 받아올 변수명 } -->
+	
+	<insert id="insertMember" parameterType="memberVO">
+		insert into t_member (id, pw, name, email) values (#{id}, #{pwd}, #{name}, #{email})
+	</insert>
+	
+	<!-- #{ HashMap에서 받아올 키 } -->
+	<insert id="insertMember2" parameterType="java.util.HashMap">
+		insert into t_member (id, pw, name, email) values (#{id}, #{pw}, #{name}, #{email})
+	</insert>
+	
+	<update id="updateMember" parameterType="memberVO">
+		update t_member set pw = #{pwd}, name = #{name}, email = #{email} where id = #{id}
+	</update>
+	
+	<delete id="deleteMember" parameterType="String">
+		delete from t_member where id = #{id}
+	</delete>
+	
+	<!-- 만약 이메일만 적고 검색을 했을 때는 AND가 알아서 삭제됨 -->
+	<!-- 
+	<select id="searchMember" parameterType="memberVO" resultMap="memResult">
+		<![CDATA[ select * from t_member ]]>
+		<where>
+			<if test="name != '' and name != null">
+				name = #{name}
+			</if>
+			<if	test="email != '' and email != null">
+				and email = #{email}
+			</if>
+		</where>
+		
+		order by joinDate desc
+	</select>
+	 -->
+	
+	<!-- Mybatis가 제공하는 태그
+		<sql>, <include>로 SQL문 중복 제거
+	 -->
+	 <sql id="a">
+	 	<![CDATA[ select * from t_member ]]>
+	 </sql>
+	 
+	<select id="searchMember" parameterType="memberVO" resultMap="memResult">
+		<include refid="a" />
+		<where>
+			<choose>
+				<when test="name != '' and name != null and email != '' and email != null">
+					name = #{name} and email = #{email}
+				</when>
+				
+				<when test="name != '' and name != null">
+					name = #{name}
+				</when>
+				
+				<when test="email != '' and email != null">
+					email = #{email}
+				</when>
+			</choose>
+		</where>
+		order by joinDate desc
+	</select>
+	
+	<select id="foreachSelect" parameterType="java.util.List" resultMap="memResult">
+		<include refid="a" />
+		where name in
+		<foreach item="item" collection="list" open="(" close=")" separator=",">
+			#{item}
+		</foreach>
+		order by joinDate desc
+	</select>
+	
+	<!-- resultMap : return 하는 역할 -->
+	<insert id="foreachInsert" parameterType="java.util.List">
+		<foreach item="vo" collection="list" open="INSERT ALL" separator=" " close="SELECT * FROM DUAL">
+			into t_member(id, pw, name, email) values(#{vo.id}, #{vo.pwd}, #{vo.name}, #{vo.email})
+		</foreach>
+	</insert>
+</mapper>
